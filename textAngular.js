@@ -484,6 +484,9 @@ textAngular.directive("textAngular", ['$compile', '$window', '$document', '$root
 						}catch(e){}; // catches when no HTML tags are present errors.
 						element.html(val);
 						element.find('a').on('click', function(e){
+							if (e.shiftKey) {
+                               					window.open($(this).attr('href'));
+                           				}
 							e.preventDefault();
 							return false;
 						});
